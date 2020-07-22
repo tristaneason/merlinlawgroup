@@ -1,0 +1,38 @@
+// Variables
+
+// Colors: Brand
+$color-primary: #293a42; // dark blue
+$color-secondary: #ff7365; // peach
+
+// Colors: Brand-Darkens
+$color-primary-dark: darken($color-primary, 7%);
+$color-secondary-dark: darken($color-secondary, 7%);
+
+// Colors: Generic
+$color-body: #222;
+$color-black: #111;
+$color-white: #fff;
+$color-gray: #f5f5f5;
+$color-gray-dark: #808080;
+
+// Components
+$color-link: $color-primary-dark;
+$color-link-dark: darken($color-primary-dark, 7%);
+$color-border: rgba($color-gray, 0.075);
+$color-border-light: rgba($color-white, 0.15);
+$color-border-dark: rgba($color-black, 0.15);
+$color-info: #0088cc; // Blue
+$color-success: #377f31; // Green
+$color-error: #ff0a0a; // Red
+$color-warning: #dba909; // Yellow
+$color-code: #dd1144;
+
+// Font Stacks
+$font-body: "Karla", sans-serif;
+$font-heading: "Frank Ruhl Libre", serif;
+$font-monospace: Menlo, Monaco, monospace;
+
+// Sizing
+$font-size-body: 100%; //use a relative size (ex - 100%); changing variable will adjust scale of site
+//$container-width: 88%;
+//$container-max-width: 80em; //1280 (80 x 16)

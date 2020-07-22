@@ -1,0 +1,338 @@
+// PAGE LAYOUT
+// Major page structure + classes
+.site {} //wraps entire site, if needed
+
+// Page Hero
+.hero {
+  padding: 150px 0 75px;
+  @include breakpoint(md) {
+    padding-top: 200px;
+    padding-bottom: 200px;
+  }
+}
+.hero,
+.page-header {
+  position: relative;
+  background-color: $color-primary;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  z-index: 1;
+  animation: fadeIn 0.2s linear;
+  > * {
+    z-index: 1;
+  }
+  &.has-overlay {
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($color-primary, 0.75);
+      z-index: -1;
+    }
+  }
+  .hero-text {
+    color: $color-white;
+    //margin-top: calc-em(-20px);
+    text-align: center;
+    .hero-title {
+      font-family: $font-heading;
+    }
+    .hero-subtitle {
+      margin: 15px auto 30px;
+      @media (min-width: $md) {
+        max-width: 65%;
+      }
+    }
+  }
+}
+
+.hero.hero-type-slider {
+  width: 100%;
+  left: 0 !important;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  z-index: -1;
+  @media (max-width: $md) {
+    overflow-y: scroll;
+    .hero-text {
+      padding: 0;
+    }
+  }
+  &.is-selected {
+    opacity: 1;
+    z-index: 0;
+    .hero-text {
+      opacity: 1;
+      z-index: 0
+    }
+  }
+  .hero-text {
+    opacity: 0;
+  }
+}
+// Flickity slider, if hero type == "slider"
+.flickity-slider {
+  transform: none !important;
+}
+.flickity-page-dots {
+  position: absolute;
+  width: 100%;
+  bottom: 15px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+  line-height: 1;
+}
+.flickity-rtl .flickity-page-dots { direction: rtl; }
+.flickity-page-dots .dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background: transparent;
+  border-radius: 50%;
+  border: 1px solid $color-secondary;
+  cursor: pointer;
+}
+.flickity-page-dots .dot.is-selected {
+  width: 12px;
+  height: 12px;
+  opacity: 1;
+  background: $color-secondary;
+}
+.gallery {
+  position: relative;
+  outline: none;
+}
+
+// Section-Hero scroll down arrow
+.scroll-down {
+  display: block;
+  position: absolute;
+  padding-top: 33px;
+  text-align: center;
+  left: calc(50% - 2.5px);
+  bottom: 30px;
+  &:before {
+    content: '';
+    position: absolute;
+    animation: arrowDown 1.2s cubic-bezier(1, 0, 0, 1) infinite;
+    top: 0px;
+    left: 50%;
+    margin-left: -2px;
+    width: 2px;
+    height: 40px;
+    background: $color-secondary;
+  }
+}
+.arrow-down {
+  display: block;
+  margin: 0 auto;
+  width: 10px;
+  height: 38px;
+  &:after {
+    content: '';
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid $color-secondary;
+    border-right: 2px solid $color-secondary;
+    transform: rotate(135deg);
+  }
+}
+
+// Page Header
+.page-header {
+  padding: 150px 0 75px;
+  background-color: $color-primary;
+  @include breakpoint(md) {
+    padding-top: 200px;
+    padding-bottom: 125px;
+  }
+}
+
+// Section Header & it's content
+.section-heading {
+  @include breakpoint(md) {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+.section-wrap {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.section-wrap-lg {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  @include breakpoint(md) {
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+}
+.section-title {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-family: $font-heading;
+}
+
+
+// Interior page default
+.page-interior {
+  .section-title {
+    font-family: $font-heading;
+  }
+}
+
+// Interior page default, basic content
+.interior-basic-content {
+  padding-bottom: 30px;
+  &.has-border {
+    border-bottom: 1px solid $color-gray;
+  }
+  &.pad-bottom {
+    padding-bottom: 115px;
+  }
+  > * {
+    font-family: $font-heading;
+  }
+  a {
+    text-decoration: underline;
+    color: $color-secondary;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.45;
+  }
+  .btn {
+    color: inherit;
+    text-decoration: none;
+  }
+  .secondary {
+    color: $color-white;
+  }
+}
+
+#breadcrumbs {
+  display: inline-block;
+  list-style: none;
+  padding: 15px 0 12px;
+  margin: 0;
+  background: $color-gray;
+  border: 1px solid darken($color-gray, 1%);
+  font-size: calc-em(14px);
+  font-family: $font-body;
+  overflow: hidden;
+  li {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+  a {
+    color: $color-secondary;
+    text-decoration: underline;
+  }
+  .separator {
+    font-size: calc-em(16px);
+    color: $color-border-dark;
+  }
+}
+
+
+// Search Results page
+.search-results-item {
+  position: relative;
+  height: 100%;
+  padding: 15px;
+  background: transparent;
+  border-bottom: 1px solid $color-gray;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background: lighten($color-gray, 2.5%);
+  }
+  &:last-of-type {
+    border: none;
+  }
+  .section-title {
+    margin-bottom: 0;
+  }
+  .post-type-title {
+    display: inline-block;
+    margin: 10px auto;
+    padding: 2px 10px;
+    background: $color-secondary;
+    color: $color-white;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+  .section-title,
+  p {
+    max-width: 95%;
+  }
+}
+
+
+// Single & Default page content
+.entry-content {
+  > * {
+    font-family: $font-body;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @extend .section-title;
+    margin-top: 40px;
+    font-family: $font-heading;
+  }
+  a {
+    color: $color-secondary;
+    text-decoration: underline;
+  }
+  iframe {
+    width: 100%;
+    @media (min-width: $md) {
+      width: 640px;
+    }
+  }
+}
+
+// Section links template part
+.section-links {
+  a {
+    text-decoration: underline;
+    color: $color-secondary;
+  }
+  p a {
+    color: $color-black;
+    text-decoration: none;
+  }
+}
+
+// Section contact form template part
+.section-form {
+  .section-title {
+    font-family: $font-heading;
+  }
+}
+
+// Contact page
+.page-contact {
+  .svg-phone {
+    color: $color-secondary;
+    font-size: 24px;
+  }
+}
+
+.offices {
+  .office-item {
+    margin-top: 30px;
+    p {
+      margin-bottom: 0;
+    }
+  }
+}

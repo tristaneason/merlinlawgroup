@@ -1,0 +1,56 @@
+.accordion {
+  margin: 60px auto 30px;
+  padding: 0;
+  list-style-type: none;
+  li {
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 60px;
+    border-top: 1px solid #f1f0ee;
+    .accordion-answer {
+      display: none;
+      padding-top: 10px;
+      padding-right: 60px;
+      padding-bottom: 10px;
+      li {
+        border: none;
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+    }
+    .attorney-filter-cats {
+      display: none;
+      &.block {
+        display: block;
+      }
+    }
+  }
+  a.title {
+    width: 85%;
+    display: block;
+    cursor: pointer;
+    font-weight: 700;
+    user-select: none;
+    &:hover {
+      text-decoration: none;
+    }
+    &:after {
+      width: 24px;
+      height: 24px;
+      border-right: 2px solid $color-secondary;
+      border-bottom: 2px solid $color-secondary;
+      position: absolute;
+      right: 10px;
+      content: " ";
+      top: 30px;
+      transform: rotate(45deg);
+      transition: all 0.2s ease-in-out;
+    }
+    &.active {
+      &:after {
+        transform: rotate(-45deg);
+        transition: all 0.2s ease-in-out;
+      }
+    }
+  }
+}

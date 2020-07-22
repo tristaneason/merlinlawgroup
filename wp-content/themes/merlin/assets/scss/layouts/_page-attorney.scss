@@ -1,0 +1,245 @@
+// PAGE ATTORNEY TEMPLATE
+// Used for Page-Attorney Directory- attorney search filtering
+.page-attorney {
+  padding-top: 0;
+  .attorney-filter {
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    background: $color-gray;
+    li {
+      padding: 40px 0;
+    }
+    .title {
+      padding-bottom: 40px;
+      &.active {
+        padding-bottom: 0;
+      }
+    }
+    .push-up {
+      margin-bottom: -40px;//rm pad from above, which is needed for main li
+    }
+    .pad-bottom {
+      padding-bottom: 40px; //add pad to even border-bottom of fitler
+    }
+  }
+  .attorney-filter-cats {
+    position: relative;
+    border-top: 1px solid $color-border-dark;
+    margin-top: 40px;
+    .filter-item {
+      &:after {
+        display: none;
+      }
+    }
+    div:first-child {
+      @media (min-width: $md){
+       //border-right: 1px solid $color-border-dark;
+     }
+    }
+  }
+  #attorney-filter-search {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    @media (max-width: $md) {
+     position: relative;
+   }
+  }
+}
+.filter-wrap {
+  font-weight: 700;
+  input[type="checkbox"].ios8-switch {
+      position: absolute;
+      margin: 5px 0 0 14px;
+      width: 0;
+      font-size: 0;
+      border: none;
+      background: transparent;
+  }
+  input[type="checkbox"].ios8-switch + label {
+      position: relative;
+      padding: 0 0 0 42px;
+      margin-top: 3px;
+      margin-bottom: 3px;
+      @media (max-width: $lg) {
+        padding-left: 36px;
+      }
+  }
+  input[type="checkbox"].ios8-switch + label:before {
+      content: "";
+      position: absolute;
+      display: block;
+      left: 0;
+      top: 0;
+      width: 34px;
+      height: 21px;
+      border-radius: 16px;
+      background: #eee;
+      border: 1px solid #d9d9d9;
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+  }
+  input[type="checkbox"].ios8-switch + label:after {
+      content: "";
+      position: absolute;
+      display: block;
+      left: 0px;
+      top: 0px;
+      width: 20px;
+      height: 21px;
+      border-radius: 21px;
+      background: $color-white;
+      border: 1px solid #d9d9d9;
+      transition: all 0.3s;
+  }
+  input[type="checkbox"].ios8-switch + label:hover:after {
+      box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  }
+  input[type="checkbox"].ios8-switch:checked + label:after {
+      margin-left: 16px;
+  }
+  input[type="checkbox"].ios8-switch:checked + label:before {
+      background: $color-secondary;
+  }
+
+}
+.attorney-item-wrap {
+  .attorney-item {
+    position: relative;
+    height: 177px;
+    margin-bottom: 30px;
+    border: 1px solid $color-gray;
+    &:hover {
+      box-shadow: 1px 1px 25px $color-gray;
+      .img {
+        background-position: center center;
+        &:before {
+          transform: scale(1);
+        }
+      }
+    }
+    @media (max-width: $lg) {
+      height: 350px;
+    }
+    @media (max-width: $md) {
+      height: 325px;
+    }
+  }
+  .img {
+    position: relative;
+    height: 175px;
+    margin: 0 auto;
+    transition: 0.4s background ease-out;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    background: rgba($color-primary, 0.2);
+    background-position: center center;
+    transition-property: color;
+    transition-duration: 0.4s;
+    &.has-overlay {
+      &:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba($color-primary, 0.2);
+        transform: scale(0);
+        transition-property: transform;
+        transition-duration: 0.4s;
+        transition-timing-function: ease-out;
+      }
+    }
+    &:hover, &:focus, &:active {
+      box-shadow: 1px 1px 25px darken($color-gray, 10%);
+      background: darken($color-primary, 2%);
+      &:before {
+        transform: scale(1);
+      }
+    }
+  }
+  a {
+    text-decoration: none;
+  }
+  p {
+    margin-top: 5px;
+    margin-bottom: 0;
+  }
+  li {
+    display: inline-block;
+    list-style-type: none;
+    color: lighten($color-body, 20%);
+    &:after {
+      content: ', ';
+    }
+    &:last-of-type {
+      &:after {
+        content: '';
+      }
+    }
+  }
+  .read-more-wrap {
+    position: absolute;
+    right: 20px;
+    bottom: 0;
+    a {
+      font-size: calc-em(14px);
+    }
+  }
+}
+// wrapper for attorney directory filter items
+.flex-wrap {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+  max-width: 100%;
+  &.full {
+    span {
+      width: 100%;
+    }
+  }
+  &.one-third {
+    span {
+      width: 33.3333%;
+      @media (max-width: $lg) {
+        width: 50%;
+      }
+    }
+  }
+  &.one-fourth {
+    span {
+      width: 25%;
+      @media (max-width: $lg) {
+        width: 50%;
+      }
+    }
+  }
+}
+
+
+// Attorney single sidebar
+// can reuse for other pages, if needed
+.sidebar-title {
+  font-weight: bold;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  &:first-of-type {
+    margin-top: 20px;
+  }
+}
+// Attorney single img
+.attorney-img {
+  border-bottom: 2px solid $color-black;
+  padding-bottom: 30px;
+  @media (max-width: $tablet) {
+    margin: 0;
+    margin-top: 10px;
+    width: 100%;
+    border-bottom: none;
+  }
+}

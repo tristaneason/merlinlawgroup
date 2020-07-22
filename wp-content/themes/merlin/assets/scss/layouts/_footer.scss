@@ -1,0 +1,79 @@
+// FOOTER
+.footer {
+  font-size: 88%;
+  border-top: 1px solid $color-border;
+  .footer-pad {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    @media (min-width: $md) {
+      padding: 60px;
+    }
+  }
+  .footer-left {
+    > .row {
+      padding-top: 40px;
+    }
+    .btn {
+      margin-top: 30px;
+    }
+  }
+  .footer-right {
+
+  }
+  .footer-follow {
+    font-weight: 700;
+    @media (max-width: $md) {
+      display: block;
+      text-align: center;
+    }
+  }
+  .footer-right-bottom,
+  .footer-right-bottom-right,
+  .footer-byline {
+    font-size: 89.5%;
+  }
+  .footer-byline {
+    margin-top: 20px;
+    a {
+      color: $color-white;
+    }
+  }
+  .footer-socials {
+    display: inline-block;
+    margin: 0;
+    margin-bottom: 40px;
+    @media (max-width: $md) {
+      display: block;
+      max-width: 100%;
+      margin: 20px auto;
+      text-align: center;
+      padding-left: 0;
+    }
+
+    li {
+      display: inline-block;
+      margin: 0 12px;
+      vertical-align: middle;
+    }
+  }
+
+}
+
+// Footer Social Icon SVGs
+svg:not(:root) {
+  overflow: visible;
+}
+.svg-icon {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+}
+.svg-social {
+  font-size: 18px;
+  fill: currentColor;
+  color: $color-secondary;
+  transition: all 0.2s linear;
+  &:hover {
+    color: $color-white;
+  }
+}

@@ -1,0 +1,145 @@
+// Buttons
+@mixin button-bg($bg) {
+  background-color: $bg;
+  &:hover {
+    text-decoration: none;
+    background-color: darken($bg,8%);
+    color: $color-primary;
+    transition: all 0.3s ease;
+  }
+  &:active {
+    text-decoration: none;
+    background-color: darken($bg,25%);
+  }
+}
+
+.btn {
+  display: inline-block;
+  margin: 0;
+  margin-top: 20px;
+  padding: 15px 25px;
+  font-family: $font-body;
+  font-size: calc-em(16px);
+  color: $color-white;
+  background-color: $color-primary;
+  text-decoration: none;
+  border-radius: 0;
+  cursor: pointer;
+  vertical-align: middle;
+  white-space: nowrap;
+  vertical-align: middle;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  transition: 0.2s background linear;
+  &:before {
+    content: '';
+    position: absolute;
+    border: $color-secondary solid 3px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    animation-duration: 1s;
+  }
+  &:hover {
+    &:before {
+      animation-name: hvr-ripple-out;
+    }
+  }
+  &.primary {
+    @include button-bg($color-primary);
+  }
+  &.secondary {
+    @include button-bg($color-secondary);
+  }
+  &.white {
+    @include button-bg($color-white);
+    color: $color-primary;
+  }
+  &.rounded {
+    border-radius: 100px;
+  }
+  &.underline {
+    background: transparent;
+    padding-left: 0;
+    padding-right: 0;
+    border: none;
+    text-decoration: underline;
+    color: $color-secondary;
+    &:before {
+      border: none;
+    }
+  }
+  &.block-mobile {
+    @media (max-width: $md) { //block and center on mobile
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+// padded line bottom & underline left on hover
+.underline-from-left {
+  display: inline-block;
+  position: relative;
+  color: $color-secondary;
+  padding-bottom: 10px;
+  font-weight: 700;
+  text-decoration: none!important;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  overflow: hidden;
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 100%;
+    bottom: 0;
+    background: $color-white;
+    height: 2px;
+    transition-property: right;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+    z-index: 1;
+  }
+  &:after {
+    content: '';
+    display: block;
+    position: relative;
+    height: 2px;
+    width: auto;
+    bottom: -10px;
+    background: $color-secondary;
+    z-index: 0;
+  }
+  &:hover {
+    color: $color-white;
+    &:after {
+      //z-index: 0;
+    }
+    &:before {
+      right: 0;
+    }
+  }
+  &.primary {
+    &:hover {
+      color: $color-primary;
+    }
+    &:before {
+      background: $color-primary;
+    }
+  }
+}
+
+
+@keyframes hvr-ripple-out {
+  100% {
+    top: -12px;
+    right: -12px;
+    bottom: -12px;
+    left: -12px;
+    opacity: 0;
+  }
+}

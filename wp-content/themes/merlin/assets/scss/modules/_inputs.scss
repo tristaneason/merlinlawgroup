@@ -1,0 +1,63 @@
+// INPUTS
+
+// global inputs
+input,
+textarea,
+select {
+  outline: 0;
+  border: 0;
+  display: block;
+  width: 100%;
+  padding: 15px 10px;
+  font-size: calc-em(16px);
+  background: $color-white;
+  color: $color-body;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 0;
+  appearance: none;
+  &:active,
+  &:focus {
+    border-color: $color-secondary;
+  }
+}
+textarea {
+  @media (min-width: $md) {
+    min-height: 300px;
+  }
+}
+select {
+  height: 50px;
+  font-size: calc-em(14px);
+  background-image: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='24' height='24' viewBox='0 0 24 24'><path fill='#444' d='M7.406 7.828l4.594 4.594 4.594-4.594 1.406 1.406-6 6-6-6z'></path></svg>");
+  background-position: 98% 58%;
+  background-repeat: no-repeat;
+}
+input[type="checkbox"] {
+  display: inline-block;
+  width: auto;
+  padding: 5px;
+  appearance: checkbox;
+}
+fieldset {
+  border: none;
+}
+label {
+  display: inline-block;
+  margin-bottom: 2px;
+  color: $color-body;
+}
+
+// WPCF7 styles
+div.wpcf7-validation-errors {
+  border: none;
+}
+div.wpcf7-response-output {
+  position: absolute;
+  width: 100%;
+  bottom: -60px;
+  border: none;
+  font-family: $font-body;
+}
+.wpcf7-not-valid {
+  border-color: $color-error;
+}

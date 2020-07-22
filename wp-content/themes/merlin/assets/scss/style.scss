@@ -1,0 +1,33 @@
+// Main style.scss
+// Using SMACSS for stylesheet organization
+
+// Base == define golbal site styleguide
+@import 'base/variables';
+@import 'base/mixins';
+@import 'base/base';
+@import 'base/fonts';
+@import 'base/typography';
+
+// Layouts == major page structure & page templates
+@import 'layouts/grid'; //boostrap 3 grid only
+@import 'layouts/wp'; //wp-specific classes
+@import 'layouts/header';
+@import 'layouts/footer';
+@import 'layouts/page';
+@import 'layouts/page-home';
+@import 'layouts/page-attorney';
+@import 'layouts/page-firm';
+@import 'layouts/page-resources';
+@import 'layouts/page-ppc';
+
+// Modules == reusable, stand-alone components
+@import 'modules/buttons';
+@import 'modules/inputs';
+@import 'modules/cards';
+@import 'modules/accordion';
+@import 'modules/carousel';
+
+// States == augments & overrides
+@import 'states/animations';
+@import 'states/plugins'; //plugin & vendor overrides
+@import 'states/helpers'; //loaded last to force overrides

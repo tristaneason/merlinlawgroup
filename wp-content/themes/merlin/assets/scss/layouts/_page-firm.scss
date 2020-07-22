@@ -1,0 +1,53 @@
+// PAGE OUR-FIRM
+.page-firm {
+  .vertical-center {
+    @media (min-width: $md) {
+      padding-top: 100px;
+      padding-right: 40px;
+    }
+    p + p {
+      @media (max-width: $md) {
+        text-align: left !important; //important to override inline wp editor
+      }
+    }
+  }
+  .pull-right {
+    @media (max-width: $md) {
+      float: none !important; //important to override default class
+    }
+  }
+}
+.section-why-merlin {
+  @media (min-width: $md) {
+    padding-bottom: 275px;
+  }
+}
+.section-empty {
+  position: relative;
+  @media (min-width: $md) {
+    height: 325px;
+  }
+}
+.firm-video {
+  padding: 15px;
+  @media (min-width: $md) {
+    position: absolute;
+    width: 100%;
+    top: -200px;
+  }
+}
+
+.icon-boxes {
+  margin-bottom: 30px;
+  .icon-box {
+    img {
+      margin: 30px auto;
+      width: auto;
+      height: 40px;
+    }
+    p {
+      padding-top: 30px;
+      border-top: 1px solid $color-white;
+    }
+  }
+}

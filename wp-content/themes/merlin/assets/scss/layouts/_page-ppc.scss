@@ -1,0 +1,115 @@
+// Template PPC
+// copied from old site
+
+.page-ppc {}
+.page-ppc .h1 {
+  font-size: calc-em(44px);
+  line-height: 56px;
+}
+.clear {
+  clear: both;
+}
+.header-ppc ul {
+  padding: 0;
+  line-height: 106px;
+  list-style-type: none;
+}
+.header-ppc ul li {
+  display: inline-block;
+  padding: 0 10px;
+  color: $color-body;
+}
+.header-ppc ul li a,
+.header-ppc ul li span {
+  color: $color-body;
+}
+
+.page-ppc #page-title {
+  margin-bottom: 0;
+}
+.page-ppc .hero {
+  height: auto;
+  p {
+    font-size: calc-em(18px);
+    color: white;
+  }
+}
+
+.page-ppc .title-container .title h1 {
+  font-size: 44px;
+  line-height: 56px;
+}
+.page-ppc p,
+.page-ppc span {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 26px;
+}
+.page-ppc .why {}
+.page-ppc .why .title-row {
+  margin-bottom: 40px;
+  text-align: center;
+}
+.page-ppc .why .bullets .bullet {
+  margin-bottom: 40px;
+}
+.page-ppc .why svg {
+  margin-right: 10px;
+  width: 1em;
+  height: auto;
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+.page-ppc .why svg .svg-check {
+  fill: currentColor;
+  color: $color-primary;
+}
+.page-ppc .why h3 {
+  padding-left: 15px;
+  margin-bottom: 25px;
+}
+.page-ppc .container-fluid {
+  padding: 80px 0 0;
+}
+.page-ppc .vid {
+  position: relative;
+  background: transparent;
+}
+
+.page-ppc .vid-container {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: 350px;
+  background: transparent;
+}
+
+.page-ppc .wpcf7 label {
+ color: $color-white;
+}
+.page-ppc .wpcf7 {
+  input[type="text"],
+  input[type="email"],
+  input[type="url"],
+  select { }
+  textarea {
+    min-height: auto;
+    height: 150px;
+  }
+}
+
+.copyright-ppc p {
+  font-size: calc-em(13px);
+}
+
+@media (max-width: 992px) {
+  .page-ppc .vid::before {background:transparent;}
+  .header-ppc .pull-right {float:none!important;text-align:center;}
+  .header-ppc ul {line-height:1; margin-bottom: 30px;}
+}
+@media (max-width: 768px) {
+   .page-ppc .title-container .title h1,
+   .page-ppc .title-container .title .h1 {font-size: 34px; line-height: 46px;}
+   .page-ppc .why svg {font-size: 40px;}
+   .page-ppc .why h3 {line-height: 40px; padding-left: 30px;}
+}

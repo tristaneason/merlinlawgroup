@@ -1,0 +1,163 @@
+// Typography
+
+body {
+	background: $color-white;
+	color: $color-body;
+	font-family: $font-body;
+	font-size: $font-size-body; //use relative sizings for everything; body = 100% or 16px
+	font-weight: normal;
+	line-height: 1.4;
+	//sticky footer using flex: https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
+	//display: flex;
+  //min-height: 100vh;
+  //flex-direction: column;
+	@include breakpoint(md) {
+		line-height: 1.5;
+    font-size: 95%;
+	}
+  @media (max-width: $md) {
+		font-size: 105%;
+	}
+}
+
+h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
+	font-family: $font-body;
+	font-weight: normal;
+	line-height: 1.35;
+	margin: 0;
+	word-wrap: break-word;
+}
+
+h1,
+.h1 {
+	font-size: calc-em(32px);
+	@include breakpoint(md) {
+		font-size: calc-em(48px);
+	}
+}
+h2,
+.h2 {
+	font-size: calc-em(28px);
+	@include breakpoint(md) {
+		font-size: calc-em(36px);
+	}
+}
+h3,
+.h3 {
+	font-size: calc-em(24px);
+	@include breakpoint(md) {
+		font-size: calc-em(30px);
+	}
+}
+h4,
+.h4 {
+	font-size: calc-em(22px);
+	@include breakpoint(md) {
+		font-size: calc-em(26px);
+	}
+}
+h5,
+.h5 {
+	font-size: calc-em(18px);
+	@include breakpoint(md) {
+		font-size: calc-em(20px);
+	}
+}
+h6,
+.h6 {
+	font-size: calc-em(16px);
+}
+p {
+  font-size: calc-em(16px);
+	margin: 0 0 calc-em(10px);
+}
+a {
+	background-color: transparent;
+	color: $color-link;
+	text-decoration: none;
+	word-wrap: break-word;
+	-webkit-text-decoration-skip: objects;
+	&:active,
+	&:hover {
+		outline: 0;
+	}
+
+	&:active,
+	&:focus,
+	&:hover {
+		color: darken( $color-primary, 15% );
+		text-decoration: underline;
+	}
+}
+
+hr {
+	border: 0;
+	border-top: calc-em(1px) solid $color-gray;
+	border-bottom: 0 solid $color-white;
+	box-sizing: content-box;
+	margin: calc-em(32px) auto;
+	overflow: visible;
+}
+
+b,
+strong {
+	font-weight: inherit;
+}
+
+b,
+strong {
+	font-weight: bolder;
+}
+dfn {
+	font-style: italic;
+}
+mark {
+	background: #ff0;
+	color: #000000;
+}
+small {
+	font-size: 80%;
+}
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+blockquote {
+	font-size: calc-em(19px);
+	font-style: italic;
+	margin: 0 0 calc-em(10px);
+	padding-left: calc-em(16px, 19px);
+	padding-right: calc-em(16px, 19px);
+	border-left: 2px solid $color-primary;
+
+	cite {
+		color: $color-gray-dark;
+		font-size: calc-em(16px, 19px);
+		padding-top: calc-em(16px);
+	}
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+}

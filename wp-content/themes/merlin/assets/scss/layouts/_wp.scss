@@ -1,0 +1,54 @@
+// Various WP stuff
+#wpadminbar input[type=text] {
+  height: 1em;
+}
+
+.posts-navigation {
+  margin-top: 60px;
+  h2 {
+    display: none;
+  }
+  .nav-previous,
+  .nav-next {
+    width: 250px;
+    background: $color-gray;
+    padding: 20px;
+  }
+}
+.nav-previous {
+  float: left;
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-right: 2px solid $color-secondary;
+    border-bottom: 2px solid $color-secondary;
+    left: 20px;
+    bottom: auto;
+    transform: rotate(135deg);
+    transition: all 0.2s ease-in-out;
+  }
+  a {
+    display: block;
+    text-align: right;
+  }
+}
+
+.nav-next {
+  float: right;
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-right: 2px solid $color-secondary;
+    border-bottom: 2px solid $color-secondary;
+    right: 20px;
+    bottom: auto;
+    transform: rotate(-45deg);
+    transition: all 0.2s ease-in-out;
+  }
+}

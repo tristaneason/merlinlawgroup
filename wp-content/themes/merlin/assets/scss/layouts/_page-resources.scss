@@ -1,0 +1,34 @@
+// PAGE RESOURCES
+
+.page-resources {
+  .card-item {
+    &.blog-item {
+      height: 425px;
+      @media (max-width: $md) {
+        height: 225px;
+      }
+    }
+    .section-excerpt {
+      position: absolute;
+      bottom: 15px;
+    }
+  }
+  a {
+    text-decoration: none;
+  }
+  .view-more {
+    display: none;
+  }
+}
+
+// latest fb post
+.recent-facebook-posts {
+  .rfbp-post {}
+  .rfbp-heading {
+    font-size: calc-em(16px);
+    font-weight: 700;
+  }
+  .rfbp-post-link-wrap {
+    display: none; //hide likes and comments count
+  }
+}

@@ -1,0 +1,71 @@
+// CARDS
+// Usage == .card-items > .card-item > .read-more > a.btn
+.card-items {
+  .card-item {
+    position: relative;
+    height: 225px;
+    margin: 15px auto;
+    padding: 1px 15px 15px;
+    background: $color-primary;
+    color: $color-white;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    background: $color-primary;
+    transition-property: color;
+    transition-duration: 0.4s;
+    // hover rectangle out effect
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba($color-primary, 0.8);
+      transform: scale(0);
+      transition-property: transform;
+      transition-duration: 0.4s;
+      transition-timing-function: ease-out;
+    }
+    &:hover, &:focus, &:active {
+      box-shadow: 1px 1px 25px darken($color-gray, 10%);
+      background: darken($color-primary, 2%);
+      &:before {
+        transform: scale(1);
+      }
+    }
+    @media (max-width: $md) {
+      //height: 175px;
+    }
+
+    .section-title {
+      font-family: $font-body;
+      font-weight: 700;
+    }
+
+    .read-more {
+      position: absolute;
+      right: 11px;
+      bottom: 0;
+    }
+
+    .underline-from-left {
+      right: 8px;
+      bottom: 9px;
+    }
+
+    a {
+      color: $color-white;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    .btn {
+      color: $color-secondary;
+    }
+  }
+}
